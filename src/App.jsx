@@ -13,33 +13,18 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 export default function App() {
-  const [loaded, setLoaded] = useState(false)
-
   return (
     <div style={{ background: '#0A0A0A', minHeight: '100vh' }}>
-      <AnimatePresence>
-        {!loaded && (
-          <Loader key="loader" onComplete={() => setLoaded(true)} />
-        )}
-      </AnimatePresence>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: loaded ? 1 : 0 }}
-        transition={{ duration: 0.8, ease: 'easeIn' }}
-        style={{ visibility: loaded ? 'visible' : 'hidden' }}
-      >
-        <Navbar />
-        <Hero />
-        <Stats />
-        <About />
-        <Program />
-        <Trainers />
-        <Testimonials />
-        <Pricing />
-        <Contact />
-        <Footer />
-      </motion.div>
+      <Navbar />
+      <Hero />
+      <Stats />
+      <About />
+      <Program />
+      <Trainers />
+      <Testimonials />
+      <Pricing />
+      <Contact />
+      <Footer />
     </div>
   )
 }
